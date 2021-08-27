@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp";
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
-import MapNavigator from "../../components/MapNavigator/MapNavigator";
+import MapNavigator from "../../components/map/mapNavigator";
 // import "react-router-dom";
 import story from "../../models/story";
 
-import "./Map.scss";
+// import "./Map.scss";
 
 mapboxgl.workerClass = MapboxWorker;
 mapboxgl.accessToken =
@@ -27,7 +27,7 @@ function Map() {
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/mapbox/streets-v11",
-      center: story.events[index].coordinates,
+      // center: story.events[index].coordinates,
       zoom: 9,
     });
     didMount.current = true;
@@ -37,8 +37,11 @@ function Map() {
 
   return (
     <div>
-      <div className='map-container' ref={mapContainer}></div>
-      <div className='map-overlay'>
+      <div
+        className='absolute inset-0 overflow-hidden'
+        ref={mapContainer}
+      ></div>
+      <div className='absolute bottom-0 w-full'>
         <div>{index}</div>
         <MapNavigator
           onBackPress={() => {
