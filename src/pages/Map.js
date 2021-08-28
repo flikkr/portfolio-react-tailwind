@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp";
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
-import MapNavigator from "../../components/map/mapNavigator";
+import MapNavigator from "../components/map/mapNavigator";
 // import "react-router-dom";
-import story from "../../models/story";
+import story from "../models/story";
 
 // import "./Map.scss";
 
@@ -23,11 +23,10 @@ function Map() {
   }, [index]);
 
   useEffect(() => {
-    story.events.forEach((e) => e.coordinates.reverse());
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/mapbox/streets-v11",
-      // center: story.events[index].coordinates,
+      center: story.events[index].coordinates,
       zoom: 9,
     });
     didMount.current = true;

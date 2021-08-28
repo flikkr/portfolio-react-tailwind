@@ -2,10 +2,6 @@ import { Fab } from "@material-ui/core";
 import { NavigateNext, NavigateBefore } from "@material-ui/icons";
 
 function MapNavigator(props) {
-  const fabStyle = {
-    width: "130px",
-  };
-
   return (
     <div>
       <div className='m-3 flex justify-between'>
