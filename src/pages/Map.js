@@ -12,7 +12,7 @@ mapboxgl.workerClass = MapboxWorker;
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZmxpa2tyIiwiYSI6ImNrbmVyYXIxcTJpemIzMXBoZ3JnMDZycDIifQ.5EneSaLoyECEbvPpp2XRxA";
 
-function Map() {
+export default function Map() {
   const mapContainer = useRef("");
   const map = useRef(null);
   const didMount = useRef(false);
@@ -67,7 +67,7 @@ function Map() {
       // These options control the flight curve, making it move
       // slowly and zoom out almost completely before starting
       // to pan.
-      speed: 1.2, // make the flying slow
+      speed: 1.8, // make the flying slow
       curve: 1, // change the speed at which it zooms out
 
       // This can be any easing function: it takes a number between
@@ -81,5 +81,3 @@ function Map() {
     });
   }
 }
-
-export default Map;

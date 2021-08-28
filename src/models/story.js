@@ -19,6 +19,13 @@ const story = {
       [end]: new Date(2014),
       [coordinates]: [4.34878, 50.8504],
     },
+    {
+      [title]: "Moved to Singapore",
+      [description]: "",
+      [start]: new Date(1996),
+      [end]: new Date(2014),
+      [coordinates]: [4.34878, 50.8504],
+    },
   ],
 };
 

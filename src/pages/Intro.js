@@ -7,7 +7,7 @@ function bounceInterp(r) {
   return `translate3d(0, ${15 * Math.sin(r + (2 * Math.PI) / 1.6)}px, 0)`;
 }
 
-function Intro() {
+export default function Intro() {
   const { radians } = useSpring({
     from: { radians: 0 },
     to: async (next) => {
@@ -59,5 +59,3 @@ function Intro() {
     </div>
   );
 }
-
-export default Intro;
