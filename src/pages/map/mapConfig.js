@@ -1,4 +1,3 @@
-
 class MapConfig {
   get config() {
     return new mapboxgl.Map({

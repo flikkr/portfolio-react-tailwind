@@ -4,7 +4,7 @@ const title = "title";
 const description = "description";
 const coordinates = "coordinates";
 
-const story = {
+const Story = {
   events: [
     {
       [title]: "The year I was born!",
@@ -29,4 +29,4 @@ const story = {
   ],
 };
 
-export default story;
+export default Story;
