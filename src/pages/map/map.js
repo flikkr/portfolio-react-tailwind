@@ -12,7 +12,11 @@ mapboxgl.accessToken =
   "pk.eyJ1IjoiZmxpa2tyIiwiYSI6ImNrbmVyYXIxcTJpemIzMXBoZ3JnMDZycDIifQ.5EneSaLoyECEbvPpp2XRxA";
 
 export default function Map() {
-  const [mapContainer, previous, next, centre] = useMapController();
+  const [mapContainer, previous, next, centre, isFirst, isLast] =
+    useMapController();
+
+  console.log(isFirst());
+  console.log(isLast());
 
   return (
     <div>
@@ -27,7 +31,12 @@ export default function Map() {
         </Fab>
       </div>
       <div className='absolute bottom-0 w-full'>
-        <MapNavigator onBackPress={previous} onForwardPress={next} />
+        <MapNavigator
+          onBackPress={previous}
+          onForwardPress={next}
+          isBackHidden={isFirst()}
+          isNextHidden={isLast()}
+        />
       </div>
     </div>
   );

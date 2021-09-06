@@ -5,13 +5,17 @@ function MapNavigator(props) {
   return (
     <div>
       <div className='m-3 flex justify-between'>
-        <Fab color='primary' onClick={props.onBackPress}>
-          <NavigateBefore />
-        </Fab>
+        {!props.isBackHidden && (
+          <Fab color='primary' onClick={props.onBackPress}>
+            <NavigateBefore />
+          </Fab>
+        )}
         <div className='flex-1'></div>
-        <Fab color='primary' onClick={props.onForwardPress}>
-          <NavigateNext />
-        </Fab>
+        {!props.isNextHidden && (
+          <Fab color='primary' onClick={props.onForwardPress}>
+            <NavigateNext />
+          </Fab>
+        )}
       </div>
     </div>
   );
