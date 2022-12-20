@@ -15,9 +15,6 @@ export default function Map() {
   const [mapContainer, previous, next, centre, isFirst, isLast] =
     useMapController();
 
-  console.log(isFirst());
-  console.log(isLast());
-
   return (
     <div>
       <div
